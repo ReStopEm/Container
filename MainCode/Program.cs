@@ -17,6 +17,7 @@ namespace MainCode
 
             Console.WriteLine(dc.Resolve<ISomeIntrface>().IsDoingNothingMethod());
             Console.WriteLine(dc.Resolve<MyAbstractClass>().UselessMethod());
+            // не робить Console.WriteLine(dc.Resolve<MyAbstractClass>().UselessMethod());
             //dc.Register<ISomeIntrface, UsefullClass>();
             //dc.Register<SomeClassRealization, MyAbstractClass>();
             //Console.WriteLine(dc.Resolve<MyAbstractClass>().UselessMethod());
