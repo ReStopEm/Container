@@ -26,11 +26,22 @@ namespace Container
                 throw new InvalideAbstractionType();
             }
 
-            if(type1.IsInterface && !type1.IsAbstract)
+            if(!type1.IsInterface && !type1.IsAbstract)
             {
                 throw new InvalideAbstractionType();
             }
 
+            TypesStorege.Add(type1, type2); 
         }
+
+        public T1 Resolve<T1>()
+        {
+            var myType = TypesStorege[typeof(T1)];
+
+            var instance = Activator.CreateInstance(myType);
+            return (T1)instance;
+
+        }
+
     }
 }
